@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0c78c4bd3ddec0c45a21b90b750eaf62
+guid: ccf00feec7cfb2641a7105a85c5f7d03
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1762733469664078895
-    second: imagen1_0
+      213: 3023904228931032535
+    second: Minion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: imagen1_0
+      name: Minion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 600
-        height: 600
+        width: 348
+        height: 331
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2ce40550cc767810800000000000000
-      internalID: 1762733469664078895
+      spriteID: 7d55c38ffd017f920800000000000000
+      internalID: 3023904228931032535
       vertices: []
       indices: 
       edges: []

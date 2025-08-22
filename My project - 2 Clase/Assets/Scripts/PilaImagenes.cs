@@ -7,12 +7,15 @@ public class PilaImagenes : MonoBehaviour
 {
     private Stack<Sprite> pilaImagenes = new Stack<Sprite>();
 
-    [SerializeField] private TMP_Text textoTMP;        // Muestra mensajes (acciones que se hacen)
-    [SerializeField] private Transform panelContenedor; // Panel donde se mostrarán las imágenes
-    [SerializeField] private GameObject prefabImagen;   // Prefab de un objeto UI Image
+    [SerializeField] private TMP_Text textoTMP;       
+    [SerializeField] private Transform panelContenedor; 
+    [SerializeField] private GameObject prefabImagen; 
 
-    // Lista de imágenes predefinidas (se asignan en el Inspector)
-    [SerializeField] private List<Sprite> imagenesPredefinidas = new List<Sprite>();
+    [SerializeField]
+    private List<Sprite> imagenesPredefinidas = new List<Sprite>()
+    {
+        
+    };
 
     private int indiceImagen = 0;
 
@@ -23,7 +26,6 @@ public class PilaImagenes : MonoBehaviour
             Sprite nuevaImagen = imagenesPredefinidas[indiceImagen];
             pilaImagenes.Push(nuevaImagen);
 
-            // Crear un objeto UI Image dentro del panel y asignar el sprite
             GameObject nuevaUI = Instantiate(prefabImagen, panelContenedor);
             nuevaUI.GetComponent<Image>().sprite = nuevaImagen;
             nuevaUI.name = "Imagen_" + indiceImagen;
@@ -43,7 +45,7 @@ public class PilaImagenes : MonoBehaviour
         {
             Sprite imagenQuitada = pilaImagenes.Pop();
 
-            // Destruir el último hijo del panel (tope de la pila visual)
+            
             Transform ultimoHijo = panelContenedor.GetChild(panelContenedor.childCount - 1);
             Destroy(ultimoHijo.gameObject);
 
@@ -72,7 +74,6 @@ public class PilaImagenes : MonoBehaviour
     {
         pilaImagenes.Clear();
 
-        // Destruir todas las imágenes del panel
         foreach (Transform hijo in panelContenedor)
         {
             Destroy(hijo.gameObject);
